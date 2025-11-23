@@ -34,56 +34,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Project Data
+    // Datos de Proyectos Actualizados con la información de los PDFs
     const projectsData = {
         'investigacion1': {
             title: 'Investigación 1',
             category: 'Asignación',
-            desc: 'Investigación detallada sobre los fundamentos teóricos de la materia. Este documento abarca los conceptos clave y su aplicación en el desarrollo de software.'
+            desc: 'Investigación sobre conceptos fundamentales (Documento pendiente de carga).' // No se subió este PDF específico
         },
         'taller1': {
             title: 'Taller Práctico 1',
             category: 'Asignación',
-            desc: 'Primer taller práctico enfocado en la resolución de problemas básicos y la implementación de algoritmos sencillos.'
+            desc: 'Desarrollo de un Sitio Web (HTML) para la Facultad de Economía de la Universidad de Chiriquí. [cite_start]El proyecto estructura los módulos del diplomado de la CAF, incluyendo menús de navegación y descarga de materiales[cite: 195, 197].'
         },
         'ejercicio1': {
             title: 'Ejercicio Práctico 1',
             category: 'Asignación',
-            desc: 'Serie de ejercicios prácticos para reforzar los conocimientos adquiridos en clase.'
+            desc: 'Solución Web para la Pyme "SUCESOS y MÁS" utilizando PHP. [cite_start]Incluye diseño de interfaz de dos columnas, navegación interna y un módulo de facturación de servicios de consultoría y hosting[cite: 316, 320, 327].'
         },
         'investigacion3': {
             title: 'Investigación 3',
             category: 'Asignación',
-            desc: 'Investigación avanzada sobre temas específicos del curso, profundizando en tecnologías modernas.'
+            desc: 'Investigación técnica sobre la integración de Bases de Datos (MariaDB-MySQL) con PHP. [cite_start]Cubre configuración de entornos, puertos y replicación entre SGBDs[cite: 119, 128].'
         },
         'taller3': {
             title: 'Taller Práctico 3',
             category: 'Asignación',
-            desc: 'Taller práctico de nivel intermedio/avanzado que requiere la integración de múltiples conceptos.'
+            desc: 'Sistema de Información para "CHINOS CAFE". Implementación de servidor MySQL y sistema POS (Punto de Venta) Web en PHP con gestión de inventario y facturación. [cite_start]Incluye configuración de Firewall y VLANs[cite: 358, 376, 385].'
         },
         'lab1': {
             title: 'Laboratorio Práctico 1',
             category: 'Laboratorio',
-            desc: 'Práctica de laboratorio inicial. Incluye experimentos de código y análisis de resultados.'
+            desc: 'Proyecto para el Municipio Distrito Alanje. [cite_start]Configuración de Servidor Apache en Linux (virtualizado), prototipo web y diseño de esquema de Red LAN para los departamentos municipales[cite: 148, 150, 155].'
         },
         'lab2': {
             title: 'Laboratorio Práctico 2',
             category: 'Laboratorio',
-            desc: 'Segunda sesión de laboratorio enfocada en estructuras de datos y optimización.'
+            desc: 'Simulación de Ciberseguridad para la empresa estatal JC de Las Lomas. [cite_start]Ejecución y análisis de ataques DDoS y escaneo de puertos (NMAP) en un entorno controlado para implementar estrategias de mitigación[cite: 403, 410, 412].'
         },
         'parcial1': {
             title: 'Examen Parcial 1',
             category: 'Parcial',
-            desc: 'Primera evaluación parcial del curso. Cubre los temas vistos en el primer módulo.'
+            desc: 'Implementación de Servidor Web NGINX en Linux y diseño de diagrama de red conectando sucursales en Chiriquí y Veraguas. [cite_start]Incluye desarrollo web para el Centro Especializado en Lenguas (CEL)[cite: 51, 60, 95].'
         },
         'parcial2': {
             title: 'Examen Parcial 2',
             category: 'Parcial',
-            desc: 'Segunda evaluación parcial. Se enfoca en la aplicación práctica de los conocimientos.'
+            desc: 'Sistema de Mantenimiento Web para la Pyme "NIBARRA". [cite_start]Funcionalidades CRUD para equipos, calendario de mantenimientos, integración de Chatbot y replicación de base de datos entre provincias[cite: 432, 438, 520].'
         },
         'final': {
             title: 'Examen Final',
             category: 'Parcial',
-            desc: 'Proyecto o examen final que integra todo lo aprendido durante el curso.'
+            desc: 'Prototipo integral para "Consultores Chiriquí S.A." gestión de vacantes sin hoja de vida. [cite_start]Incluye simulación de facturación de peajes digitales tipo DGI, Chatbot de guía y arquitectura de servidores con balanceo de carga[cite: 17, 18, 20].'
         }
     };
 
