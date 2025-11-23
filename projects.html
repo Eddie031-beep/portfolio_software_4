@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">DevPortfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre Mí</a></li>
+                <li><a href="projects.html" class="active">Proyectos</a></li>
+                <li><a href="skills.html">Habilidades</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 class="section-title">Trabajos Académicos</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-target="asignaciones">Asignaciones</button>
+                <button class="tab-btn" data-target="laboratorios">Laboratorios</button>
+                <button class="tab-btn" data-target="parciales">Parciales</button>
+            </div>
+
+            <!-- Asignaciones -->
+            <div class="projects-grid" id="asignaciones">
+                <!-- Investigación 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Investigación 1</h3>
+                        <p>Investigación sobre conceptos fundamentales.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=investigacion1" class="btn-small preview-btn">Vista
+                                Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Taller Práctico 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Taller Práctico 1</h3>
+                        <p>Primer taller de aplicación de conceptos.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=taller1" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ejercicio Práctico 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Ejercicio Práctico 1</h3>
+                        <p>Ejercicios de resolución de problemas.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=ejercicio1" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Investigación 3 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Investigación 3</h3>
+                        <p>Investigación avanzada sobre temas del curso.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=investigacion3" class="btn-small preview-btn">Vista
+                                Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Taller Práctico 3 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Taller Práctico 3</h3>
+                        <p>Taller práctico de implementación.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=taller3" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laboratorios -->
+            <div class="projects-grid hidden" id="laboratorios">
+                <!-- Laboratorio Práctico 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Laboratorio Práctico 1</h3>
+                        <p>Práctica de laboratorio inicial.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=lab1" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Laboratorio Práctico 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Laboratorio Práctico 2</h3>
+                        <p>Segunda práctica de laboratorio.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=lab2" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parciales -->
+            <div class="projects-grid hidden" id="parciales">
+                <!-- Examen Parcial 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Examen Parcial 1</h3>
+                        <p>Evaluación parcial de conocimientos.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=parcial1" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Examen Parcial 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Examen Parcial 2</h3>
+                        <p>Segunda evaluación parcial.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=parcial2" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Examen Final -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Examen Final</h3>
+                        <p>Evaluación final del curso.</p>
+                        <div class="card-actions">
+                            <a href="project-detail.html?id=final" class="btn-small preview-btn">Vista Previa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portafolio de Desarrollo de Software. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

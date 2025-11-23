@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Proyecto - Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .detail-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .detail-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-meta {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .pdf-viewer {
+            background: #1a1a1a;
+            height: 600px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .sidebar p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">DevPortfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre Mí</a></li>
+                <li><a href="projects.html" class="active">Proyectos</a></li>
+                <li><a href="skills.html">Habilidades</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="detail-container">
+                <a href="projects.html" style="color: #888; margin-bottom: 1rem; display: inline-block;">&larr; Volver a
+                    Proyectos</a>
+
+                <div class="detail-header">
+                    <h1 class="detail-title" id="project-title">Cargando...</h1>
+                    <p class="detail-meta" id="project-category">Categoría</p>
+                </div>
+
+                <div class="detail-content">
+                    <div class="main-column">
+                        <div class="pdf-viewer" id="pdf-container">
+                            <!-- PDF Object will be injected here -->
+                            <p>Cargando documento...</p>
+                        </div>
+                    </div>
+
+                    <aside class="sidebar">
+                        <h3>Descripción</h3>
+                        <p id="project-desc">Descripción del proyecto...</p>
+
+                        <h3>Recursos</h3>
+                        <a href="#" id="download-link" class="btn" style="width: 100%; text-align: center;">
+                            <i class="fas fa-download"></i> Descargar ZIP
+                        </a>
+                        <p style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                            Incluye código fuente y documentación.
+                        </p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portafolio de Desarrollo de Software. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
