@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'taller1': {
             title: 'Taller Práctico 1',
             category: 'Asignación',
-            desc: 'Desarrollo de un Sitio Web (HTML) para la Facultad de Economía de la Universidad de Chiriquí. [cite_start]El proyecto estructura los módulos del diplomado de la CAF, incluyendo menús de navegación y descarga de materiales[cite: 195, 197].'
+            desc: 'Desarrollo de un Sitio Web (HTML) para la Facultad de Economía de la Universidad de Chiriquí. El proyecto estructura los módulos del diplomado de la CAF, incluyendo menús de navegación y descarga de materiales.',
+            fileName: 'Taller1.zip' // <--- AQUÍ ESTÁ EL CAMBIO
         },
         'ejercicio1': {
             title: 'Ejercicio Práctico 1',
