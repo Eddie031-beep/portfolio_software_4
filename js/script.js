@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'investigacion1': {
             title: 'Investigación 1',
             category: 'Asignación',
-            desc: 'Investigación sobre conceptos fundamentales (Documento pendiente de carga).' // No se subió este PDF específico
+            desc: 'Análisis de Estructura y Jerarquía Visual (agrupación, espacio en blanco, tipografía) y técnicas de diseño UX/UI como Card Sorting, Prototipado y Wireframes.',
+            fileName: 'Investigacion1_EddieMan.pdf' // Nombre del archivo para descargar
         },
         'taller1': {
             title: 'Taller Práctico 1',
