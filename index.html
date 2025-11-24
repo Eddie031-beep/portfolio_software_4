@@ -4,101 +4,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Portafolio de Eddie</title>
+    <title>Eddie - Desarrollador de Software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Fondo animado con partículas -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
     <header id="header">
         <nav class="navbar">
-            <div class="logo">DevPortfolio</div>
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Eddie</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="about.html">Sobre Mí</a></li>
                 <li><a href="projects.html">Proyectos</a></li>
                 <li><a href="skills.html">Habilidades</a></li>
                 <li><a href="contact.html">Contacto</a></li>
-                <li><i class="fas fa-moon theme-toggle" id="theme-toggle" title="Cambiar tema"></i></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section Mejorado -->
         <section id="inicio" class="hero">
-            <div class="hero-content reveal">
-                <h1>Hola, soy <span class="highlight">Eddie</span> <i class="fas fa-code" style="font-size: 0.8em;"></i>
+            <div class="hero-content">
+                <div class="hero-badge fade-in">
+                    <i class="fas fa-code"></i>
+                    <span>Desarrollo de Software IV</span>
+                </div>
+
+                <h1 class="hero-title fade-in-up">
+                    Hola, soy <span class="gradient-text">Eddie</span>
                 </h1>
-                <h2>Futuro Desarrollador de Software</h2>
-                <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">
-                    Estudiante de la <strong>Universidad Tecnológica de Panamá</strong>.
-                    Me especializo en crear soluciones web eficientes, bases de datos robustas y redes seguras.
+
+                <div class="typing-container fade-in-up">
+                    <span class="typing-prefix">Especializado en</span>
+                    <span class="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+
+                <p class="hero-description fade-in-up">
+                    Estudiante de <strong>Desarrollo y Gestión de Software</strong> en la UTP.
+                    Construyendo soluciones web robustas, infraestructura escalable y sistemas seguros.
                 </p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn"><i class="fas fa-laptop-code"></i> Ver Portafolio</a>
-                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Contáctame</a>
+
+                <div class="hero-buttons fade-in-up">
+                    <a href="projects.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Ver Proyectos</span>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Contactar</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats fade-in-up">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Proyectos</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Tecnologías</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Dedicación</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- Servicios / Áreas de Enfoque -->
+        <section class="section services-section">
+            <div class="section-header">
+                <span class="section-tag">Lo que hago</span>
+                <h2 class="section-title">Áreas de <span class="gradient-text">Especialización</span></h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card card-hover">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Desarrollo Web Full-Stack</h3>
+                    <p>Creación de aplicaciones web modernas con HTML5, CSS3, JavaScript y PHP. Enfoque en experiencia
+                        de usuario y código limpio.</p>
+                    <ul class="tech-tags">
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-hover">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Infraestructura & Redes</h3>
+                    <p>Diseño y configuración de arquitecturas de red, servidores Linux y sistemas de seguridad para
+                        empresas.</p>
+                    <ul class="tech-tags">
+                        <li>Linux</li>
+                        <li>Apache/Nginx</li>
+                        <li>VLANs</li>
+                        <li>Firewall</li>
+                    </ul>
+                </div>
+
+                <div class="service-card card-hover">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <p>Diseño, implementación y optimización de bases de datos relacionales con replicación y alta
+                        disponibilidad.</p>
+                    <ul class="tech-tags">
+                        <li>MySQL</li>
+                        <li>MariaDB</li>
+                        <li>Replicación</li>
+                        <li>Optimización</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background-color: var(--secondary-color);">
-            <div class="reveal">
-                <h2 class="section-title">Áreas de Enfoque</h2>
-                <div class="skills-container">
-                    <div class="skill-card" style="text-align: left;">
-                        <i class="fas fa-globe highlight"></i>
-                        <h3>Desarrollo Web</h3>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                            Creación de sitios modernos utilizando HTML5, CSS3, PHP y JavaScript. Enfoque en UX/UI.
-                        </p>
-                    </div>
-                    <div class="skill-card" style="text-align: left;">
-                        <i class="fas fa-server highlight"></i>
-                        <h3>Infraestructura</h3>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                            Configuración de servidores Linux (Apache/Nginx), Redes LAN y seguridad informática.
-                        </p>
-                    </div>
-                    <div class="skill-card" style="text-align: left;">
-                        <i class="fas fa-database highlight"></i>
-                        <h3>Base de Datos</h3>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                            Diseño y gestión de bases de datos relacionales (MySQL/MariaDB) con replicación.
-                        </p>
-                    </div>
+        <!-- Proyecto Destacado -->
+        <section class="section featured-section">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <span class="section-tag">Proyecto Destacado</span>
+                    <h2>Examen Final:<br><span class="gradient-text">Sistema Integral</span></h2>
+                    <p>
+                        Desarrollo completo de sistema web para "Consultores Chiriquí S.A."
+                        que incluye gestión de vacantes, simulación de facturación digital tipo DGI,
+                        chatbot inteligente y arquitectura de servidores con balanceo de carga.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Sistema CRUD completo</li>
+                        <li><i class="fas fa-check-circle"></i> Chatbot de asistencia</li>
+                        <li><i class="fas fa-check-circle"></i> Arquitectura escalable</li>
+                        <li><i class="fas fa-check-circle"></i> Balanceo de carga</li>
+                    </ul>
+                    <a href="projects.html" class="btn btn-outline">
+                        <span>Ver Todos los Proyectos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="contact-container reveal">
-                <h2 class="section-title">¿Listo para ver código?</h2>
-                <p style="color: var(--text-muted);">He recopilado mis mejores asignaciones, laboratorios y exámenes
-                    prácticos.</p>
-                <br>
-                <div class="card" style="max-width: 500px; margin: 0 auto;">
-                    <div class="card-content">
-                        <h3><i class="fas fa-star highlight"></i> Proyecto Destacado</h3>
-                        <p><strong>Examen Final:</strong> Prototipo de Consultoría Web & Chatbot.</p>
-                        <div class="card-actions" style="justify-content: center; margin-top: 1.5rem;">
-                            <a href="projects.html" class="btn-small preview-btn"
-                                style="border: 1px solid var(--accent-color); padding: 8px 15px; border-radius: 5px; text-decoration: none;">Ir
-                                a Proyectos</a>
+                <div class="featured-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="code-comment">// Sistema de Consultoría Web</span>
+<span class="code-keyword">class</span> <span class="code-class">ConsultoriaSystem</span> {
+  <span class="code-keyword">constructor</span>() {
+    <span class="code-keyword">this</span>.modules = [
+      <span class="code-string">'Gestión de Vacantes'</span>,
+      <span class="code-string">'Facturación Digital'</span>,
+      <span class="code-string">'Chatbot IA'</span>,
+      <span class="code-string">'Load Balancer'</span>
+    ];
+  }
+  
+  <span class="code-function">deploy</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">'Sistema Activo ✓'</span>;
+  }
+}</code></pre>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- CTA Final -->
+        <section class="section cta-section">
+            <div class="cta-content">
+                <h2>¿Listo para explorar mi trabajo?</h2>
+                <p>Descubre los proyectos que he desarrollado durante el curso</p>
+                <a href="projects.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Ver Portafolio Completo</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portafolio de Eddie. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Eddie - Desarrollo de Software IV. Universidad Tecnológica de Panamá</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>

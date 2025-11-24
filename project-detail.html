@@ -4,83 +4,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Proyecto - Portafolio</title>
+    <title>Detalle del Proyecto - Eddie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .detail-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
+        .detail-hero {
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 6% 3rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-primary);
+        }
+
+        .breadcrumb i {
+            font-size: 0.7rem;
         }
 
         .detail-header {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .detail-title {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
         .detail-meta {
-            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            padding: 0.5rem 1.2rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 20px;
+            color: var(--accent-primary);
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .detail-content {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 2rem;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .pdf-viewer {
-            background: #1a1a1a;
-            height: 600px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
+        .main-column {
+            min-width: 0;
+        }
+
+        .pdf-viewer-container {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 800px;
+            position: relative;
+        }
+
+        [data-theme="light"] .pdf-viewer-container {
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-viewer-container object {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         .sidebar {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
+            position: sticky;
+            top: 120px;
             height: fit-content;
         }
 
-        .sidebar h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .sidebar p {
+        [data-theme="light"] .info-card {
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: #ccc;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3 i {
+            color: var(--accent-primary);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: var(--accent-gradient);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .download-note {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+
+        [data-theme="light"] .download-note {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .tech-stack {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-stack li {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        [data-theme="light"] .action-btn {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .action-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .pdf-viewer-container {
+                height: 600px;
+            }
         }
 
         @media (max-width: 768px) {
-            .detail-content {
-                grid-template-columns: 1fr;
+            .detail-hero {
+                padding: 8rem 5% 2rem;
+            }
+
+            .pdf-viewer-container {
+                height: 500px;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
     <header id="header">
         <nav class="navbar">
-            <div class="logo">DevPortfolio</div>
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Eddie</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Sobre Mí</a></li>
@@ -88,51 +277,105 @@
                 <li><a href="skills.html">Habilidades</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="section">
-            <div class="detail-container">
-                <a href="projects.html" style="color: #888; margin-bottom: 1rem; display: inline-block;">&larr; Volver a
-                    Proyectos</a>
-
-                <div class="detail-header">
-                    <h1 class="detail-title" id="project-title">Cargando...</h1>
-                    <p class="detail-meta" id="project-category">Categoría</p>
+        <section class="detail-hero">
+            <div class="detail-header">
+                <div class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="projects.html">Proyectos</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="project-category">Proyecto</span>
                 </div>
 
-                <div class="detail-content">
-                    <div class="main-column">
-                        <div class="pdf-viewer" id="pdf-container">
-                            <!-- PDF Object will be injected here -->
-                            <p>Cargando documento...</p>
+                <h1 class="detail-title">
+                    <span class="gradient-text" id="project-title">Cargando...</span>
+                </h1>
+
+                <div class="detail-meta">
+                    <span class="meta-badge">
+                        <i class="fas fa-folder-open"></i>
+                        <span id="project-category-badge">Categoría</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 2rem;">
+            <div class="detail-content">
+                <div class="main-column">
+                    <div class="pdf-viewer-container" id="pdf-container">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary);">
+                            <div style="text-align: center;">
+                                <i class="fas fa-spinner fa-spin"
+                                    style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                <p>Cargando documento...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="info-card">
+                        <h3>
+                            <i class="fas fa-info-circle"></i>
+                            Descripción
+                        </h3>
+                        <p id="project-desc">Cargando descripción del proyecto...</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>
+                            <i class="fas fa-download"></i>
+                            Descargar
+                        </h3>
+                        <div class="download-section">
+                            <a href="#" id="download-link" class="download-btn">
+                                <i class="fas fa-file-archive"></i>
+                                <span>Descargar Proyecto</span>
+                            </a>
+                            <div class="download-note">
+                                <i class="fas fa-lightbulb"></i>
+                                Incluye código fuente, documentación y recursos
+                            </div>
                         </div>
                     </div>
 
-                    <aside class="sidebar">
-                        <h3>Descripción</h3>
-                        <p id="project-desc">Descripción del proyecto...</p>
-
-                        <h3>Recursos</h3>
-                        <a href="#" id="download-link" class="btn" style="width: 100%; text-align: center;">
-                            <i class="fas fa-download"></i> Descargar Proyecto Completo
+                    <div class="action-buttons">
+                        <a href="projects.html" class="action-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Volver</span>
                         </a>
-                        <p style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
-                            Descarga el archivo ZIP que contiene todo: Código fuente, presentaciones (PPTX), documentos
-                            y más.
-                        </p>
-                    </aside>
-                </div>
+                        <button class="action-btn" onclick="window.print()">
+                            <i class="fas fa-print"></i>
+                            <span>Imprimir</span>
+                        </button>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portafolio de Desarrollo de Software. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Eddie - Desarrollo de Software IV. Universidad Tecnológica de Panamá</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
