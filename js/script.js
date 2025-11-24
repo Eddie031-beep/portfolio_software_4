@@ -11,7 +11,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Tab Switching Logic (Only if tabs exist)
+    // Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle;
+
+    // Check local storage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        body.setAttribute('data-theme', 'light');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'light') {
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'dark');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        } else {
+            body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+    });
+
+    // Tab Switching Logic with Animation Reset
     const tabBtns = document.querySelectorAll('.tab-btn');
     const projectGrids = document.querySelectorAll('.projects-grid');
 
@@ -26,12 +70,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Hide all grids
                 projectGrids.forEach(grid => grid.classList.add('hidden'));
 
-                // Show target grid
+                // Show target grid and trigger animations
                 const targetId = btn.getAttribute('data-target');
-                document.getElementById(targetId).classList.remove('hidden');
+                const targetGrid = document.getElementById(targetId);
+                targetGrid.classList.remove('hidden');
+
+                // Reset animations
+                const cards = targetGrid.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.classList.remove('animate-card');
+                    void card.offsetWidth; // Trigger reflow
+                    card.classList.add('animate-card');
+                });
             });
         });
+
+        // Trigger animation for the initial active tab
+        const initialGrid = document.querySelector('.projects-grid:not(.hidden)');
+        if (initialGrid) {
+            const cards = initialGrid.querySelectorAll('.card');
+            cards.forEach(card => card.classList.add('animate-card'));
+        }
     }
+
 
     // Project Data
     // Datos de Proyectos Actualizados con la información de los PDFs

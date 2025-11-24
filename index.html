@@ -22,6 +22,7 @@
                 <li><a href="projects.html">Proyectos</a></li>
                 <li><a href="skills.html">Habilidades</a></li>
                 <li><a href="contact.html">Contacto</a></li>
+                <li><i class="fas fa-moon theme-toggle" id="theme-toggle" title="Cambiar tema"></i></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -31,11 +32,11 @@
 
     <main>
         <section id="inicio" class="hero">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <h1>Hola, soy <span class="highlight">Eddie</span> <i class="fas fa-code" style="font-size: 0.8em;"></i>
                 </h1>
                 <h2>Futuro Desarrollador de Software</h2>
-                <p style="max-width: 600px; margin: 0 auto 2rem auto;">
+                <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">
                     Estudiante de la <strong>Universidad Tecnológica de Panamá</strong>.
                     Me especializo en crear soluciones web eficientes, bases de datos robustas y redes seguras.
                 </p>
@@ -46,44 +47,49 @@
             </div>
         </section>
 
-        <section class="section" style="background-color: rgba(255,255,255,0.02);">
-            <h2 class="section-title">Áreas de Enfoque</h2>
-            <div class="skills-container">
-                <div class="skill-card" style="width: 250px; text-align: left;">
-                    <i class="fas fa-globe highlight"></i>
-                    <h3>Desarrollo Web</h3>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 0.5rem;">
-                        Creación de sitios modernos utilizando HTML5, CSS3, PHP y JavaScript. Enfoque en UX/UI.
-                    </p>
-                </div>
-                <div class="skill-card" style="width: 250px; text-align: left;">
-                    <i class="fas fa-server highlight"></i>
-                    <h3>Infraestructura</h3>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 0.5rem;">
-                        Configuración de servidores Linux (Apache/Nginx), Redes LAN y seguridad informática.
-                    </p>
-                </div>
-                <div class="skill-card" style="width: 250px; text-align: left;">
-                    <i class="fas fa-database highlight"></i>
-                    <h3>Base de Datos</h3>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 0.5rem;">
-                        Diseño y gestión de bases de datos relacionales (MySQL/MariaDB) con replicación.
-                    </p>
+        <section class="section" style="background-color: var(--secondary-color);">
+            <div class="reveal">
+                <h2 class="section-title">Áreas de Enfoque</h2>
+                <div class="skills-container">
+                    <div class="skill-card" style="text-align: left;">
+                        <i class="fas fa-globe highlight"></i>
+                        <h3>Desarrollo Web</h3>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            Creación de sitios modernos utilizando HTML5, CSS3, PHP y JavaScript. Enfoque en UX/UI.
+                        </p>
+                    </div>
+                    <div class="skill-card" style="text-align: left;">
+                        <i class="fas fa-server highlight"></i>
+                        <h3>Infraestructura</h3>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            Configuración de servidores Linux (Apache/Nginx), Redes LAN y seguridad informática.
+                        </p>
+                    </div>
+                    <div class="skill-card" style="text-align: left;">
+                        <i class="fas fa-database highlight"></i>
+                        <h3>Base de Datos</h3>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            Diseño y gestión de bases de datos relacionales (MySQL/MariaDB) con replicación.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="contact-container">
+            <div class="contact-container reveal">
                 <h2 class="section-title">¿Listo para ver código?</h2>
-                <p>He recopilado mis mejores asignaciones, laboratorios y exámenes prácticos.</p>
+                <p style="color: var(--text-muted);">He recopilado mis mejores asignaciones, laboratorios y exámenes
+                    prácticos.</p>
                 <br>
                 <div class="card" style="max-width: 500px; margin: 0 auto;">
                     <div class="card-content">
                         <h3><i class="fas fa-star highlight"></i> Proyecto Destacado</h3>
                         <p><strong>Examen Final:</strong> Prototipo de Consultoría Web & Chatbot.</p>
-                        <div class="card-actions" style="justify-content: center;">
-                            <a href="projects.html" class="btn-small preview-btn">Ir a Proyectos</a>
+                        <div class="card-actions" style="justify-content: center; margin-top: 1.5rem;">
+                            <a href="projects.html" class="btn-small preview-btn"
+                                style="border: 1px solid var(--accent-color); padding: 8px 15px; border-radius: 5px; text-decoration: none;">Ir
+                                a Proyectos</a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +98,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025Portafolio de Eddie. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Portafolio de Eddie. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/script.js"></script>
