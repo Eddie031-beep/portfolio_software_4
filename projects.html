@@ -4,149 +4,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos - Portafolio</title>
+    <title>Proyectos - Eddie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .projects-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10rem 6% 4rem;
+            text-align: center;
+        }
+
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-main);
+        }
+
+        [data-theme="light"] .tab-btn {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-gradient);
+            color: #000;
+            border-color: transparent;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-theme="light"] .project-card {
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 12px;
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-small {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: var(--font-main);
+        }
+
+        [data-theme="light"] .btn-small {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-small:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            background: rgba(0, 255, 136, 0.05);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
     <header id="header">
         <nav class="navbar">
-            <div class="logo">DevPortfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Sobre Mí</a></li>
-                <li><a href="projects.html" class="active">Proyectos</a></li>
-                <li><a href="skills.html">Habilidades</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Eddie</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="projects.html" class="active">Proyectos</a></li>
+                    <li><a href="skills.html">Habilidades</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="section">
-            <h2 class="section-title">Trabajos Académicos</h2>
-            <div class="tabs">
-                <button class="tab-btn active" data-target="asignaciones">Asignaciones</button>
-                <button class="tab-btn" data-target="laboratorios">Laboratorios</button>
-                <button class="tab-btn" data-target="parciales">Parciales</button>
+        <section class="projects-hero">
+            <div>
+                <span class="section-tag">Mi Trabajo</span>
+                <h1 class="section-title">Trabajos <span class="gradient-text">Académicos</span></h1>
             </div>
+        </section>
 
-            <!-- Asignaciones -->
-            <div class="projects-grid" id="asignaciones">
-                <!-- Investigación 1 -->
-                <div class="card">
-                    <div class="card-content">
+        <section class="section" style="padding-top: 2rem;">
+            <div class="projects-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-target="asignaciones">Asignaciones</button>
+                    <button class="tab-btn" data-target="laboratorios">Laboratorios</button>
+                    <button class="tab-btn" data-target="parciales">Parciales</button>
+                </div>
+
+                <!-- Asignaciones -->
+                <div class="projects-grid" id="asignaciones">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
                         <h3>Investigación 1</h3>
                         <p>Investigación sobre conceptos fundamentales.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=investigacion1" class="btn-small preview-btn">Vista
-                                Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=investigacion1" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Taller Práctico 1 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
                         <h3>Taller Práctico 1</h3>
                         <p>Primer taller de aplicación de conceptos.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=taller1" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=taller1" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Ejercicio Práctico 1 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
                         <h3>Ejercicio Práctico 1</h3>
                         <p>Ejercicios de resolución de problemas.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=ejercicio1" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=ejercicio1" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Investigación 3 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
                         <h3>Investigación 3</h3>
                         <p>Investigación avanzada sobre temas del curso.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=investigacion3" class="btn-small preview-btn">Vista
-                                Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=investigacion3" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Taller Práctico 3 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                         <h3>Taller Práctico 3</h3>
                         <p>Taller práctico de implementación.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=taller3" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=taller3" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Laboratorios -->
-            <div class="projects-grid hidden" id="laboratorios">
-                <!-- Laboratorio Práctico 1 -->
-                <div class="card">
-                    <div class="card-content">
+                <!-- Laboratorios -->
+                <div class="projects-grid hidden" id="laboratorios">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
                         <h3>Laboratorio Práctico 1</h3>
                         <p>Práctica de laboratorio inicial.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=lab1" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=lab1" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Laboratorio Práctico 2 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
                         <h3>Laboratorio Práctico 2</h3>
                         <p>Segunda práctica de laboratorio.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=lab2" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=lab2" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Parciales -->
-            <div class="projects-grid hidden" id="parciales">
-                <!-- Examen Parcial 1 -->
-                <div class="card">
-                    <div class="card-content">
+                <!-- Parciales -->
+                <div class="projects-grid hidden" id="parciales">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
                         <h3>Examen Parcial 1</h3>
                         <p>Evaluación parcial de conocimientos.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=parcial1" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=parcial1" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Examen Parcial 2 -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
                         <h3>Examen Parcial 2</h3>
                         <p>Segunda evaluación parcial.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=parcial2" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=parcial2" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
-                </div>
-                <!-- Examen Final -->
-                <div class="card">
-                    <div class="card-content">
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
                         <h3>Examen Final</h3>
                         <p>Evaluación final del curso.</p>
-                        <div class="card-actions">
-                            <a href="project-detail.html?id=final" class="btn-small preview-btn">Vista Previa</a>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=final" class="btn-small">
+                                <i class="fas fa-eye"></i>
+                                Vista Previa
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +361,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Portafolio de Desarrollo de Software. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Eddie - Desarrollo de Software IV. Universidad Tecnológica de Panamá</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>

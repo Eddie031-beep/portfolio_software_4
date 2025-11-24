@@ -209,7 +209,10 @@ header.scrolled {
     border-radius: 12px;
     cursor: pointer;
     transition: var(--transition);
-    margin-left: 1rem;
+}
+
+[data-theme="light"] .theme-toggle {
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .theme-toggle:hover {

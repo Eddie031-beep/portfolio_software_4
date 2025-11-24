@@ -14,12 +14,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .about-hero {
-            min-height: 50vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 10rem 6% 4rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .about-hero>div {
+            position: relative;
+            z-index: 1;
         }
 
         .about-content {
@@ -219,15 +247,20 @@
                 <span class="logo-text">Eddie</span>
                 <span class="logo-bracket">/&gt;</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html" class="active">Sobre Mí</a></li>
-                <li><a href="projects.html">Proyectos</a></li>
-                <li><a href="skills.html">Habilidades</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html" class="active">Sobre Mí</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="skills.html">Habilidades</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
