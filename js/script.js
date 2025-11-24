@@ -51,37 +51,44 @@ document.addEventListener('DOMContentLoaded', () => {
         'ejercicio1': {
             title: 'Ejercicio Práctico 1',
             category: 'Asignación',
-            desc: 'Solución Web para la Pyme "SUCESOS y MÁS" utilizando PHP. [cite_start]Incluye diseño de interfaz de dos columnas, navegación interna y un módulo de facturación de servicios de consultoría y hosting[cite: 316, 320, 327].'
+            desc: 'Solución Web para la Pyme "SUCESOS y MÁS". Incluye código fuente (Parte I) y documentación de casos de estudio (Partes II y III).',
+            fileName: 'Ejercicio1_Entregables.zip' // <--- Archivo ZIP maestro
         },
         'investigacion3': {
             title: 'Investigación 3',
             category: 'Asignación',
-            desc: 'Investigación técnica sobre la integración de Bases de Datos (MariaDB-MySQL) con PHP. [cite_start]Cubre configuración de entornos, puertos y replicación entre SGBDs[cite: 119, 128].'
+            desc: 'Investigación técnica sobre la integración de Bases de Datos (MariaDB-MySQL) con PHP.',
+            // NO AGREGAMOS fileName aquí, así el código sabrá que no hay descarga.
         },
         'taller3': {
             title: 'Taller Práctico 3',
             category: 'Asignación',
-            desc: 'Sistema de Información para "CHINOS CAFE". Implementación de servidor MySQL y sistema POS (Punto de Venta) Web en PHP con gestión de inventario y facturación. [cite_start]Incluye configuración de Firewall y VLANs[cite: 358, 376, 385].'
+            desc: 'Sistema de Información para "CHINOS CAFE". Implementación de servidor MySQL y sistema POS (Punto de Venta) Web en PHP con gestión de inventario y facturación. Incluye configuración de Firewall y VLANs.',
+            fileName: 'Taller3_Entregables.zip' // <--- AQUÍ ESTÁ EL CAMBIO
         },
         'lab1': {
             title: 'Laboratorio Práctico 1',
             category: 'Laboratorio',
-            desc: 'Proyecto para el Municipio Distrito Alanje. [cite_start]Configuración de Servidor Apache en Linux (virtualizado), prototipo web y diseño de esquema de Red LAN para los departamentos municipales[cite: 148, 150, 155].'
+            desc: 'Proyecto para el Municipio Distrito Alanje. Configuración de Servidor Apache en Linux (virtualizado), prototipo web y diseño de esquema de Red LAN para los departamentos municipales.',
+            fileName: 'Laboratorios.zip' // <--- CORREGIDO: Ahora este ZIP está aquí
         },
         'lab2': {
             title: 'Laboratorio Práctico 2',
             category: 'Laboratorio',
-            desc: 'Simulación de Ciberseguridad para la empresa estatal JC de Las Lomas. [cite_start]Ejecución y análisis de ataques DDoS y escaneo de puertos (NMAP) en un entorno controlado para implementar estrategias de mitigación[cite: 403, 410, 412].'
+            desc: 'Simulación de Ciberseguridad para la empresa estatal JC de Las Lomas. Ejecución y análisis de ataques DDoS y escaneo de puertos (NMAP) en un entorno controlado para implementar estrategias de mitigación.',
+            fileName: 'Informe_DDoS_Pruebas.pdf' // <--- AQUÍ ESTÁ EL CAMBIO
         },
         'parcial1': {
             title: 'Examen Parcial 1',
             category: 'Parcial',
-            desc: 'Implementación de Servidor Web NGINX en Linux y diseño de diagrama de red conectando sucursales en Chiriquí y Veraguas. [cite_start]Incluye desarrollo web para el Centro Especializado en Lenguas (CEL)[cite: 51, 60, 95].'
+            desc: 'Implementación de Servidor Web NGINX en Linux y diseño de diagrama de red conectando sucursales en Chiriquí y Veraguas. Incluye desarrollo web para el Centro Especializado en Lenguas (CEL).',
+            fileName: 'SitioCEL.zip' // <--- AQUÍ ESTÁ EL CAMBIO
         },
         'parcial2': {
             title: 'Examen Parcial 2',
             category: 'Parcial',
-            desc: 'Sistema de Mantenimiento Web para la Pyme "NIBARRA". [cite_start]Funcionalidades CRUD para equipos, calendario de mantenimientos, integración de Chatbot y replicación de base de datos entre provincias[cite: 432, 438, 520].'
+            desc: 'Sistema de Mantenimiento Web para la Pyme "NIBARRA". Funcionalidades CRUD, Chatbot y replicación de DB.',
+            fileName: 'Parcial2_Entregables.zip' // <--- Archivo con el git y el pkt
         },
         'final': {
             title: 'Examen Final',
@@ -103,9 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('project-category').textContent = data.category;
             document.getElementById('project-desc').textContent = data.desc;
 
-            // Update Download Link
+            // Update Download Link (Lógica Inteligente)
             const downloadLink = document.getElementById('download-link');
-            downloadLink.href = `assets/projects/${projectId}/project.zip`;
+
+            if (data.fileName) {
+                // Si hay nombre de archivo, mostramos el botón y configuramos el enlace
+                downloadLink.style.display = 'inline-flex'; // Asegura que se vea
+                downloadLink.href = `assets/projects/${projectId}/${data.fileName}`;
+
+                // Iconos dinámicos
+                if (data.fileName.endsWith('.zip')) {
+                    downloadLink.innerHTML = '<i class="fas fa-file-archive"></i> Descargar ZIP';
+                } else if (data.fileName.endsWith('.pdf')) {
+                    downloadLink.innerHTML = '<i class="fas fa-file-pdf"></i> Descargar PDF';
+                } else {
+                    downloadLink.innerHTML = '<i class="fas fa-download"></i> Descargar Archivo';
+                }
+            } else {
+                // Si NO hay fileName (como en Investigación 3), ocultamos el botón
+                downloadLink.style.display = 'none';
+            }
 
             // Update PDF Viewer
             const pdfContainer = document.getElementById('pdf-container');
