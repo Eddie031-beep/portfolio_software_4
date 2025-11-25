@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const textArray = [
             'Desarrollo Web',
             'Bases de Datos',
-            'Redes & Seguridad',
-            'Infraestructura',
-            'Arquitectura de Software'
+            'Apasionado a la programación',
+            'Programación Orientada a Objetos',
+            'Programación Funcional'
         ];
         const typingDelay = 100;
         const erasingDelay = 50;
